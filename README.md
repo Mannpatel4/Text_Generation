@@ -58,7 +58,6 @@ text-generation/
 * **Deep Learning:** TensorFlow, Keras, NumPy
 * **Backend API:** FastAPI, Uvicorn
 * **Frontend:** HTML5, CSS3, Vanilla JavaScript (`fetch` API)
-* **Deployment:** Render (frontend and backend hosted separately)
 
 ---
 
