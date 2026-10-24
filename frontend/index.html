@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finish the story – next word predictor</title>
+  <meta name="description" content="A recurrent neural network trained on one short story suggests the next word as you write.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="masthead-text">
+        <h1>Finish the story</h1>
+        <p class="lede">A recurrent neural network trained on a single short story guesses the next word as you write. It only knows words from that story.</p>
+      </div>
+      <p class="status" id="status" data-state="checking">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span id="status-text">Checking server…</span>
+      </p>
+    </header>
+
+    <main>
+      <section aria-labelledby="write-label">
+        <label class="field-label" id="write-label" for="editor">Your text</label>
+
+        <div class="sheet" id="sheet">
+          <div class="mirror" id="mirror" aria-hidden="true"></div>
+          <textarea id="editor" rows="1" spellcheck="false" autocomplete="off" autocapitalize="sentences"
+                    placeholder="Three brothers were left destitute…"></textarea>
+        </div>
+
+        <p class="hint">Press <kbd>Tab</kbd> to accept the coloured word, or tap a suggestion below.</p>
+        <p class="unknown" id="unknown" hidden></p>
+
+        <div class="actions">
+          <button type="button" class="btn btn-primary" id="continue">Continue the story</button>
+          <button type="button" class="btn" id="clear">Clear text</button>
+        </div>
+      </section>
+
+      <section class="suggestions" aria-labelledby="next-heading">
+        <h2 id="next-heading">Likely next words</h2>
+        <p class="message" id="message" role="status" hidden></p>
+        <p class="empty" id="empty">Suggestions show up here once you start writing.</p>
+        <ol class="candidates" id="candidates"></ol>
+      </section>
+
+      <section class="starters" aria-labelledby="starter-heading">
+        <h2 id="starter-heading">Start from a line in the story</h2>
+        <ul>
+          <li><button type="button" class="starter" data-starter="Three brothers were left destitute">Three brothers were left destitute</button></li>
+          <li><button type="button" class="starter" data-starter="The eldest was not yet able to provide">The eldest was not yet able to provide</button></li>
+          <li><button type="button" class="starter" data-starter="They had no neighbors to lend them">They had no neighbors to lend them</button></li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
