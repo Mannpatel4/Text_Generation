@@ -16,7 +16,7 @@
   const clearBtn = $('clear');
 
   // FastAPI address. Change this if your server runs on another host or port.
-  const API_URL = 'http://127.0.0.1:8000';
+  const API_URL = 'https://text-generation-oah3.onrender.com';
 
   const CONTEXT_WORDS = 40;   // the model only reads the last 12 words; send a few more to be safe
   const GENERATE_WORDS = 25;  // words added by "Continue the story"
